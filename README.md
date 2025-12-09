@@ -67,19 +67,48 @@ GOOGLE_CLOUD_TTS_KEY=your_google_cloud_tts_key
 
 Android Studio에서 프로젝트를 열고 실행하세요.
 
-## 프로젝트 구조
+---
+
+## 📁 프로젝트 구조
 
 ```
-app/src/main/java/com/cookandroid/justspeakapp/
-├── adapter/          # RecyclerView 어댑터
-├── data/             # 데이터 관리
-├── model/            # 데이터 모델
-├── service/          # AI, TTS, STT 서비스
-├── MainActivity.java
-├── LoginActivity.java
-├── ConversationActivity.java
-└── ...
+JustSpeakApp/
+├── app/src/main/
+│   ├── java/com/cookandroid/justspeakapp/
+│   │   ├── 📱 Activity
+│   │   │   ├── SplashActivity.java (온보딩)
+│   │   │   ├── LoginActivity.java
+│   │   │   ├── SignupActivity.java
+│   │   │   ├── InterestSelectionActivity.java
+│   │   │   ├── LearningGoalActivity.java
+│   │   │   ├── MainActivity.java
+│   │   │   ├── ConversationActivity.java (기본)
+│   │   │   ├── ConversationActivityWithAI.java (AI 버전) ⭐
+│   │   │   └── SettingsActivity.java
+│   │   ├── 🤖 Service
+│   │   │   ├── GeminiService.java (Google Gemini AI)
+│   │   │   ├── AzureSpeechService.java (발음 평가)
+│   │   │   ├── SpeechRecognitionService.java
+│   │   │   └── TextToSpeechService.java
+│   │   ├── 📦 Model
+│   │   │   ├── ConversationMessage.java
+│   │   │   ├── PronunciationFeedback.java
+│   │   │   ├── Scenario.java
+│   │   │   ├── LearningProgress.java
+│   │   │   └── GrammarError.java
+│   │   └── 🎨 Adapter
+│   │       └── ConversationAdapter.java
+│   ├── res/
+│   │   ├── layout/ (8개 Activity 레이아웃)
+│   │   ├── drawable/ (18개 아이콘)
+│   │   ├── values/ (colors, strings)
+│   │   └── ...
+│   └── AndroidManifest.xml
+├── API_SETUP_GUIDE.md 📖
 ```
+
+---
+
 
 ## 라이선스
 
