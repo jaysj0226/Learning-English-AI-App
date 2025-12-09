@@ -83,7 +83,7 @@ JustSpeakApp/
 │   │   │   ├── LearningGoalActivity.java
 │   │   │   ├── MainActivity.java
 │   │   │   ├── ConversationActivity.java (기본)
-│   │   │   ├── ConversationActivityWithAI.java (AI 버전) ⭐
+│   │   │   ├── ConversationActivityWithAI.java (LLM) ⭐
 │   │   │   └── SettingsActivity.java
 │   │   ├── 🤖 Service
 │   │   │   ├── GeminiService.java (Google Gemini AI)
