@@ -162,4 +162,3 @@ AI: I'm doing great, thank you! How about you?
 ---
 
 **작성자**: 정선재 (202101801)
-**업데이트**: 2025-01-20
