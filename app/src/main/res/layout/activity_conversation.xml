@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- 상단 바 -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="대화 연습"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pretendard_bold" />
+
+        <ImageButton
+            android:id="@+id/btn_stop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_stop"
+            android:contentDescription="@string/stop" />
+    </LinearLayout>
+
+    <!-- 대화 메시지 리스트 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/input_container"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+    <!-- 입력 영역 -->
+    <LinearLayout
+        android:id="@+id/input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <!-- 피드백 영역 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/feedback_background"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_feedback"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="피드백: &quot;thank you&quot;의 T를 더 강하게"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/pretendard_regular" />
+
+                <ImageButton
+                    android:id="@+id/btn_close_feedback"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_close"
+                    android:contentDescription="@string/close" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 텍스트 입력 영역 (음성 인식 불가 시 표시) -->
+        <LinearLayout
+            android:id="@+id/text_input_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_message_input"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:hint="Type your message in English..."
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="14sp"
+                android:imeOptions="actionSend" />
+
+            <ImageButton
+                android:id="@+id/btn_send"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle_primary"
+                android:src="@drawable/ic_send"
+                android:padding="12dp"
+                app:tint="@color/white"
+                android:contentDescription="Send" />
+        </LinearLayout>
+
+        <!-- 음성 입력 버튼 -->
+        <RelativeLayout
+            android:id="@+id/voice_input_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_mic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_mic"
+                app:tint="@color/white"
+                app:backgroundTint="@color/primary"
+                app:elevation="0dp"
+                android:contentDescription="@string/speak" />
+
+            <!-- 음성 입력 상태 표시 -->
+            <TextView
+                android:id="@+id/tv_listening_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fab_mic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="영어로 말하는 중..."
+                android:textColor="@color/primary"
+                android:textSize="14sp"
+                android:fontFamily="@font/pretendard_medium"
+                android:visibility="gone" />
+
+            <!-- 음성 파형 애니메이션 (선택사항) -->
+            <View
+                android:id="@+id/voice_wave_animation"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_above="@id/fab_mic"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- 레슨 완료 다이얼로그 오버레이 -->
+    <FrameLayout
+        android:id="@+id/lesson_complete_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <!-- 축하 아이콘 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎉"
+                    android:textSize="48sp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- 타이틀 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="레슨 완료!"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 설명 -->
+                <TextView
+                    android:id="@+id/tv_lesson_complete_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3분 대화를 완료했습니다.\n계속 학습하시겠습니까?"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.3"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- 버튼 영역 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- 그만하기 버튼 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_stop_lesson"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="그만하기"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/pretendard_medium"
+                        app:cornerRadius="24dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/primary"
+                        android:textColor="@color/primary" />
+
+                    <!-- 계속하기 버튼 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_continue_lesson"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="계속하기"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/pretendard_medium"
+                        app:cornerRadius="24dp"
+                        app:backgroundTint="@color/primary" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+</RelativeLayout>

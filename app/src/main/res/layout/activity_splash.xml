@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark"
+    android:padding="24dp">
+
+    <!-- 로고 이미지 -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_just_speak"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/app_logo"
+        android:padding="8dp"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    <!-- 앱 이름 -->
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Just Speak"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/pretendard_bold" />
+
+    <!-- 부제목 -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_app_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Experience Just Speak's helpfulness"
+        android:textColor="@color/white_70"
+        android:textSize="14sp"
+        android:fontFamily="@font/pretendard_regular" />
+
+    <!-- 시작하기 버튼 -->
+    <Button
+        android:id="@+id/btn_get_started"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_above="@id/tv_login_prompt"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button_primary"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/pretendard_bold" />
+
+    <!-- 로그인 안내 텍스트 -->
+    <TextView
+        android:id="@+id/tv_login_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text="Already have an account?"
+        android:textColor="@color/white_70"
+        android:textSize="14sp"
+        android:fontFamily="@font/pretendard_regular" />
+
+    <!-- 로그인 버튼 -->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_button_primary"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/pretendard_medium" />
+
+</RelativeLayout>

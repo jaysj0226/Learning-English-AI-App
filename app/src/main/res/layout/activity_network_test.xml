@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Network Connectivity Test"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This will test if your emulator can connect to the internet and Azure endpoints."
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_test_http"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Basic Internet (Google)"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_test_azure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Azure Endpoints"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Results:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F5F5F5"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click a button above to start testing...\n"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="monospace" />
+    </ScrollView>
+
+</LinearLayout>

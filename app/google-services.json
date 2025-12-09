@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "477554581580",
+    "project_id": "justspeakapp-f8cc4",
+    "storage_bucket": "justspeakapp-f8cc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477554581580:android:8e0b3826122fbe3a3dd4e9",
+        "android_client_info": {
+          "package_name": "com.cookandroid.justspeakapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477554581580-4595e27qsvracg7hb86sl623ohr6nmoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cookandroid.justspeakapp",
+            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        },
+        {
+          "client_id": "477554581580-nh4fsltjppf223adtfu3uiao3vj0p0ip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cookandroid.justspeakapp",
+            "certificate_hash": "3484dd6d4a65b789efedfa26409b03b695a83a85"
+          }
+        },
+        {
+          "client_id": "477554581580-kendmr3oiafebfdnoq0t2tc7475fojvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJVpeXWIPEO5zI0LTWYshBOkxkJ5wG7Q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477554581580-kendmr3oiafebfdnoq0t2tc7475fojvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

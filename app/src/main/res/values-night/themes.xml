@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.JustSpeakApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 여기부터는 필요하면 색상, 폰트 등 커스터마이징 -->
+        <!--
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        -->
+    </style>
+
+    <style name="Theme.JustSpeakApp" parent="Base.Theme.JustSpeakApp" />
+
+</resources>
