@@ -296,9 +296,3 @@ Good pronunciation! 👍
 - [발음 평가 가이드](https://learn.microsoft.com/ko-kr/azure/cognitive-services/speech-service/how-to-pronunciation-assessment)
 
 ---
-
-## 🎉 완료!
-
-이제 Azure Speech Service를 사용하여 정확한 발음 평가를 받을 수 있습니다!
-
-**에뮬레이터에서도 안정적으로 음성 인식이 작동합니다.** 🚀
